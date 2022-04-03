@@ -1,9 +1,6 @@
 #!/usr/bin/env python
 # coding: utf-8
 
-# In[ ]:
-
-
 from imap_tools import MailBox, AND
 
 # pegar emails de um remetente para um destinatário
@@ -13,7 +10,7 @@ password = "senha"
 # lista de imaps: https://www.systoolsgroup.com/imap/
 meu_email = MailBox('imap.gmail.com').login(username, password)
 
-# criterios: https://github.com/ikvk/imap_tools#search-criteria
+# parâmetros: https://github.com/ikvk/imap_tools#search-criteria
 lista_emails = meu_email.fetch(AND(from_="remetente", to="destinatario"))
 for email in lista_emails:
     print(email.subject)
@@ -30,5 +27,3 @@ for email in lista_emails:
                 print(anexo.payload)
                 with open("Teste.xlsx", 'wb') as arquivo_excel:
                     arquivo_excel.write(anexo.payload)
-
-# %%
