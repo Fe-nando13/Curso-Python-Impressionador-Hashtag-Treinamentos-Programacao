@@ -6,7 +6,6 @@ chrome_options = webdriver.ChromeOptions()
 # Pra abrir o navegador em segundo plano
 chrome_options.add_argument('headless')
 driver = webdriver.Chrome(options=chrome_options)
-driver.set_window_size(1024, 600)
 driver.maximize_window()
 driver.get("https://erick-pavani.github.io/")
 time.sleep(1)
